@@ -16,9 +16,7 @@ Deno.serve(async (req) => {
 
   if (pathname === "/") {
     return new Response(
-      `Welcome to URL Shortner! Create a short url with the command:
-
-  curl -d https://example.com ${origin}`,
+      `Welcome to URL Shortner! Create a short url with the command:\n\n curl -d https://example.com ${origin}`,
     );
   }
 
