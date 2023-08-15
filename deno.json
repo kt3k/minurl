@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --unstable --allow-net=:8000 --watch server.ts",
-    "start": "deno run --unstable --allow-net=:8000 server.ts"
+    "dev": "deno run --unstable --allow-net=:8000 --watch main.ts",
+    "start": "deno run --unstable --allow-net=:8000 main.ts"
   }
 }
