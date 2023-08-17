@@ -1,3 +1,5 @@
+// Copyright 2023 Yoshiya Hinosawa. All rights reserved. MIT license.
+
 const kv = await Deno.openKv();
 
 Deno.serve(async ({ method, text, url }) => {
