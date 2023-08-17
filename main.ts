@@ -2,12 +2,12 @@
 
 const kv = await Deno.openKv();
 
-Deno.serve(async ({ method, text, url }) => {
-  const { origin, pathname } = new URL(url);
+Deno.serve(async (req) => {
+  const { origin, pathname } = new URL(req.url);
 
-  if (method === "POST") {
+  if (req.method === "POST") {
     const key = [crypto.getRandomValues(new BigUint64Array(1))[0].toString(36)];
-    const val = new URL(await text()).href;
+    const val = new URL(await req.text()).href;
 
     await kv.atomic().check({ key, versionstamp: null }).set(key, val).commit();
     return new Response(`Created ${origin}/${key[0]}\n`);
